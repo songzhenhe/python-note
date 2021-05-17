@@ -1,0 +1,422 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="songzhenhe">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>Excel - Technical Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-use-math-autocorrect-in-excel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Technical Notes" class="md-header__button md-logo" aria-label="Technical Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technical Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Excel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/songzhenhe/tech-note/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Technical Notes" class="md-nav__button md-logo" aria-label="Technical Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Technical Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/songzhenhe/tech-note/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intermediate.md" class="md-nav__link">
+        intermediate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/" class="md-nav__link">
+        Module
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-math-autocorrect-in-excel" class="md-nav__link">
+    How to Use Math AutoCorrect in Excel
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/songzhenhe/tech-note/edit/master/docs/excel.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Excel</h1>
+                
+                <h2 id="how-to-use-math-autocorrect-in-excel">How to Use Math AutoCorrect in Excel<a class="headerlink" href="#how-to-use-math-autocorrect-in-excel" title="Permanent link">&para;</a></h2>
+<p><strong>Summary</strong></p>
+<p><strong>Use Math AutoCorrect Outside of Math Regions in Excel</strong></p>
+<p>Excel does not have Word's native option available within the Excel Options ► Proofing ► AutoCorrect Options ► Math AutoCorrect for <em>Use Math AutoCorrect rules outside of math regions</em>. Likewise, much of the VBA functionality within Excel's VBE for the OMathAutoCorrect or OMathAutoCorrectEntries collection objects has been disabled. When Excel is within its own math editor, a different interface is being exchanged with and all symbols can be properly displayed but using AutoCorrect for the math symbols in regular worksheet operations is not available.</p>
+<p><strong>Intended for Excel 2010 and 2013 (and other Office programs of the same versions)</strong></p>
+<p><strong>Details</strong></p>
+<p>How to get Math AutoCorrect into Everyday Excel Worksheet Operations</p>
+<p>In my (admittedly uninformed) opinion, Excel's separation of standard and mathematical autocorrect and the subsequent crippling of the latter most likely has to do with several common math symbols being used for reserved purposes within Excel. The single quote (e.g. <em>tick</em> or ASCII 0×039) character being the most obvious one as it is used to force Excel to consider a number or date as text when used as a prefix. Suffice to say that there are legitimate reasons why the decision to isolate Excel's Math AutoCorrect was made while Word's was not.</p>
+<p>This just means that we have to work around the limitation and accept any shortcomings. While Excel's VBA use of the OMathAutoCorrect object is somewhat crippled, the equivalent VBA in Word is not. If we take all of the entries from the OMathAutoCorrectEntries collection and convert them as additions to the standard AutoCorrectEntries collection, then they will be available within all Office programs including Excel. The end results in each of the Office programs may vary.</p>
+<p><strong>Normalizing the Math AutoCorrect Entries with a Macro</strong></p>
+<p>Close Excel and all other Office programs then open Word to a new blank document and tap Alt+F11 to enter the VBE. Use the pull-down menus to Insert ► Module (or Alt+I, M). Paste the following into the new pane titled something like <em>Normal - NewMacros (Code)</em> or <em>Normal - Module1 (Code)</em>.</p>
+<p>Sub Normalize_Math_AutoCorrect_Entries()
+   Dim acm As Long, ac As Long, yn As Long, cACEs As AutoCorrectEntries
+   Set cACEs = Application.AutoCorrect.Entries
+   With Application.OMathAutoCorrect
+     .UseOutsideOMath = False   'no longer necessary
+     For acm = 1 To .Entries.Count
+       yn = vbYes
+       For ac = 1 To cACEs.Count
+         If cACEs(ac).Name = .Entries(acm).Name Then
+            yn = MsgBox(cACEs(ac).Name &amp; " is currently assigned to " &amp; cACEs(ac).Value &amp; _
+             Chr(46) &amp; Chr(10) &amp; Chr(10) &amp; "Are you sure you want to replace it?", _
+             vbYesNo + vbQuestion, "Duplication")
+           If yn = vbYes Then cACEs(ac).Delete
+           Exit For
+         End If
+       Next ac
+       If yn = vbYes Then
+         Application.AutoCorrect.Entries.Add Name:=.Entries(acm).Name, _
+​         Value:=.Entries(acm).Value
+​      End If
+​    Next acm
+   End With
+   Set cACEs = Nothing
+ End Sub</p>
+<p>With that in place, tap Alt+Q to return to your blank document. Tap Alt+F8 to open the Macros dialog and run the macro. If a duplicate entry is encountered, the process will be paused and you will be presented with something like the following.</p>
+<pre><code>              ![Image](figures/2908ba3f-7915-4cb4-8286-14d47a76772a)
+</code></pre>
+<p>Note that I have chosen to demonstrate one duplication that can actually be displayed. Many of the Unicode characters will only be represented by a <strong>?</strong> since a standard VBA message box cannot display Unicode. This does not mean that the symbol will be added incorrectly; like Excel this is simply a display limitation.</p>
+<p>Accept or reject the overwrites. Anything not already found within the standard AutoCorrectEntries collection will be added without asking.</p>
+<p>When this process is complete, all of the OMathAutoCorrect entries will have been normalized as standard AutoCorrect entries. If you open Excel, they should be available immediately. Here are some before and after screenshots first initiating the auto-correction process by typing the keyword then typing the space that forces the auto-correction event after \beta.</p>
+<p>​      <img alt="Image" src="figures/bc14d581-485c-41cc-a5e1-64c376fb5a40" />      <img alt="Image" src="figures/ff34ea1a-bb27-4bef-9fcd-8683c8aac227" /></p>
+<p>That is all there is to it. By converting the special Math AutoCorrect Entries to standard ones,  the limitation on using the special math symbol through auto-correction has been bypassed.</p>
+<p><strong>References</strong></p>
+<p>I've prepared a full listing of the Math AutoCorrect symbols on my OneDrive <a href="http://1drv.ms/1vzWVmZ">here</a> for you to reference.</p>
+<ul>
+<li><a href="http://1drv.ms/1vzWVmZ">Excel_2013_OMathAutoCorrectEntries.xlsx</a></li>
+</ul>
+<p>On a related note, I wrote a local Wiki article a while back on a similar topic on the use of stylized fractions within Office programs through additions to the standard AutoCorrect collection. Here is a link to that:</p>
+<ul>
+<li><a href="http://answers.microsoft.com/en-us/office/wiki/office_2013_release-word/styled-fractions-in-windows/4a07d5fa-2484-4e39-b1f3-70bb3eb0c332">Styled Fractions in Windows</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            2020, songzhenhe
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

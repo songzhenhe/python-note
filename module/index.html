@@ -1,0 +1,664 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="songzhenhe">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>Module - Technical Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plotly-dash" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Technical Notes" class="md-header__button md-logo" aria-label="Technical Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technical Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/songzhenhe/tech-note/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Technical Notes" class="md-nav__button md-logo" aria-label="Technical Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Technical Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/songzhenhe/tech-note/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intermediate.md" class="md-nav__link">
+        intermediate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Module
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Module
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plotly" class="md-nav__link">
+    Plotly
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plotly" class="md-nav__link">
+    Plotly
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/songzhenhe/tech-note/edit/master/docs/module.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="plotly-dash">Plotly &amp; Dash<a class="headerlink" href="#plotly-dash" title="Permanent link">&para;</a></h1>
+<p>Dashboard</p>
+<h2 id="plotly">Plotly<a class="headerlink" href="#plotly" title="Permanent link">&para;</a></h2>
+<p>Embedding a Dash app within an Existing Flask App
+As discussed in the Deployment Chapter, Dash uses the Flask web framework under the hood. 
+This makes it fairly straightforward to embed a Dash app at a specific route of an existing Flask app.</p>
+<p>In the following example, a Dash app is mounted at the /dash route (eg http://localhost:8050/dash) of a Flask app:</p>
+<pre><code class="language-python">import flask
+import dash
+import dash_html_components as html
+
+server = flask.Flask(__name__)
+
+@server.route('/')
+def index():
+    return 'Hello Flask app'
+
+app = dash.Dash(
+    __name__,
+    server=server,
+    routes_pathname_prefix='/dash/'
+)
+
+app.layout = html.Div(&quot;My Dash app&quot;)
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
+
+``` python
+
+Note: it is important to set the name parameter of the Dash instance to the value __name__, 
+so that Dash can correctly detect the location of any static assets inside an assets directory for this Dash app.
+
+
+
+
+
+## use selected column in Dash DataTable
+
+``
+#         
+columns=[{'name': i, 'id': i} for i in df.loc[:,['Magnitude','Latitude','Longitude','Time', 'Place', 'Detail']]],
+#        fixed_rows={ 'headers': True, 'data': 0 },
+        data=df.iloc[:,[1,4,5,6,0,3]].to_dict('records')
+````
+
+
+
+</code></pre>
+<p>def create_table(df):
+    #format dataframe column of urls so that it displays as hyperlink
+    def display_links(df):
+        links = df['Detail'].to_list()
+        rows = []
+        for x in links:
+            link = '<a href="" title="+str(x) +">Geojson</a>'
+            rows.append(link)
+        return rows</p>
+<pre><code>df['Detail'] = display_links(df)
+
+
+table = dash_table.DataTable(
+    id='cust-table',
+</code></pre>
+<h1 id="columnsname-i-id-i-for-i-in-dfcolumns">columns=[{"name": i, "id": i} for i in df.columns],<a class="headerlink" href="#columnsname-i-id-i-for-i-in-dfcolumns" title="Permanent link">&para;</a></h1>
+<pre><code>    columns=[{'name': 'Magnitude', 'id':'Magnitude'}, 
+             {'name': 'Latitude', 'id':'Latitude'}, 
+             {'name': 'Longitude', 'id':'Longitude'}, 
+             {'name': 'Time', 'id':'Time'}, 
+             {'name': 'Depth', 'id':'Depth'}, 
+             {'name': 'Place', 'id':'Place'},
+             {'name': 'Detail', 'id':'Detail','type':'text','presentation':'markdown'}
+    ],
+</code></pre>
+<h1 id="columnsname-i-id-i-for-i-in-dflocmagnitudelatitudelongitudetimedepthplacedetail">columns=[{'name': i, 'id': i} for i in df.loc[:,['Magnitude','Latitude','Longitude','Time','Depth','Place','Detail']]],<a class="headerlink" href="#columnsname-i-id-i-for-i-in-dflocmagnitudelatitudelongitudetimedepthplacedetail" title="Permanent link">&para;</a></h1>
+<h1 id="fixed_rows-headers-true-data-0">fixed_rows={ 'headers': True, 'data': 0 },<a class="headerlink" href="#fixed_rows-headers-true-data-0" title="Permanent link">&para;</a></h1>
+<h1 id="datadfto_dictrecords">data=df.to_dict('records'),<a class="headerlink" href="#datadfto_dictrecords" title="Permanent link">&para;</a></h1>
+<pre><code>    data=df.iloc[:,[1,4,5,2,6,0,3]].to_dict('records')
+)
+return table
+</code></pre>
+<pre><code>
+
+
+
+
+# Flask
+
+Flask's setup is merely a copy+paste of the following five lines:
+
+``` python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;)
+def hello():
+    return &quot;Hello World!&quot;
+</code></pre>
+<pre><code class="language-python">from flask import Flask
+
+app = Flask(__name__,
+            instance_relative_config=False,
+            template_folder=&quot;templates&quot;,
+            static_folder=&quot;static&quot;)
+</code></pre>
+<p><code>Markup</code> allows us to return an HTML page by rendering a string as HTML:</p>
+<pre><code>from flask import Flask, Markup
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;)
+def hello():
+    return Markup(&quot;&lt;h1&gt;Hello World!&lt;/h1&gt;&quot;)
+</code></pre>
+<p><code>return_template</code> will return an HTML page by finding the page in our /templates folder:</p>
+<pre><code>from flask import Flask, render_template
+app = Flask(__name__, template_folder=&quot;templates&quot;)
+
+@app.route(&quot;/&quot;)
+def hello():
+    return render_template(&quot;index.html&quot;)
+</code></pre>
+<p><code>make_response</code> has a number of uses, the most notable of which is to serve a response in the form of a JSON object. 
+If our application is an API, we'd return a response objects instead of pages:</p>
+<p>On the topic of creating APIs with Flask, we can also specify whether the route at hand is a POST, GET, or some other method. 
+This is handled easily within the route decorator:</p>
+<pre><code>from flask import Flask, make_response, request
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;, methods=['GET'])
+def hello():
+    if request.method != 'GET':
+        return make_response('Malformed request', 400)
+    headers = {&quot;Content-Type&quot;: &quot;application/json&quot;}
+    return make_response('it worked!', 200, headers)
+</code></pre>
+<pre><code>from flask import Flask, make_response, request, jsonify
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;, methods=['GET'])
+def hello():
+    if request.method != 'GET':
+        return make_response('Malformed request', 400)
+    my_dict = {'key': 'dictionary value'}
+    headers = {&quot;Content-Type&quot;: &quot;application/json&quot;}
+    return make_response(jsonify(my_dict), 200, headers)
+</code></pre>
+<h1 id="geospatial-data-in-python">Geospatial data in python<a class="headerlink" href="#geospatial-data-in-python" title="Permanent link">&para;</a></h1>
+<p>geo modulus</p>
+<h2 id="convert">Convert<a class="headerlink" href="#convert" title="Permanent link">&para;</a></h2>
+<p>simplekml module.</p>
+<p>Example:</p>
+<p>The simplekml newpoint method requires that we send it a NAME and a COORDS, each of which we can easily pull directly from the CSV file that we’ve opened via our csv reader. Because csv.reader returns a list, we can access elements of that list by their numerical index. For the first row of our CSV file, row[0] refers to “Charleston County, SC”, and row[1] refers to 32.7956561.</p>
+<p>We saved our coordinates as lat,long but simplekml wants them in the reverse order (long, lat), which is why we need to create the list like [(row[2],row[1])] as seen above.</p>
+<p>So for each row in our CSV file, we create new point via the newpoint method of the kml object. Once we’ve finished with the file, we just need to call the save method on the kml object, and it will create a perfect KML file (‘battleplaces.kml’) for us.</p>
+<pre><code>import csv
+import simplekml
+
+inputfile = csv.reader(open('geocoded-placenames.csv','r'))
+kml=simplekml.Kml()
+
+for row in inputfile:
+  kml.newpoint(name=row[0], coords=[(row[2],row[1])])
+
+kml.save('battleplaces.kml')
+</code></pre>
+<h1 id="pandoc">Pandoc<a class="headerlink" href="#pandoc" title="Permanent link">&para;</a></h1>
+<p>Convert document formats</p>
+<h2 id="convert_1">Convert<a class="headerlink" href="#convert_1" title="Permanent link">&para;</a></h2>
+<p>mkdocs new my-project
+mkdocs build
+mkdocs serve
+mkdocs gh-deploy</p>
+<p>GitHub Action 
+A token is generated on your user account and a secret is part of the repository settings.</p>
+<h1 id="pandas">Pandas<a class="headerlink" href="#pandas" title="Permanent link">&para;</a></h1>
+<p>This document is for tips using pandas</p>
+<h2 id="pdread_csv">pd.read_csv<a class="headerlink" href="#pdread_csv" title="Permanent link">&para;</a></h2>
+<p>To keep the first row 0 (as the header) and then skip everything else up to row 10, you can write:</p>
+<pre><code>pd.read_csv('test.csv', sep='|', skiprows=range(1, 10))
+</code></pre>
+<p>Read all lines as values (no header, defaults to integers)</p>
+<pre><code>pd.read_csv(f, header=None)
+</code></pre>
+<p>Use a particular row as the header (skip all lines before that):</p>
+<pre><code>pd.read_csv(f, header=3)
+</code></pre>
+<p>Use a multiple rows as the header creating a MultiIndex (skip all lines before the last specified header line):</p>
+<pre><code>pd.read_csv(f, header=[2, 4]
+</code></pre>
+<p>Skip N rows from the start of the file (the first row that's not skipped is the header):</p>
+<pre><code>pd.read_csv(f, skiprows=3)   
+</code></pre>
+<p>Skip one or more rows by giving the row indices (the first row that's not skipped is the header):</p>
+<pre><code>pd.read_csv(f, skiprows=[2, 4])  
+</code></pre>
+<p>The iloc indexer syntax is data.iloc[<row selection>, <column selection>], which is sure to be a source of confusion for R users. 
+“iloc” in pandas is used to select rows and columns by number, in the order that they appear in the data frame. 
+You can imagine that each row has a row number from 0 to the total rows (data.shape[0])  and iloc[] allows selections based on these numbers. 
+The same applies for columns (ranging from 0 to data.shape[1] )</p>
+<h1 id="single-selections-using-iloc-and-dataframe">Single selections using iloc and DataFrame<a class="headerlink" href="#single-selections-using-iloc-and-dataframe" title="Permanent link">&para;</a></h1>
+<h1 id="rows">Rows:<a class="headerlink" href="#rows" title="Permanent link">&para;</a></h1>
+<p>data.iloc[0] # first row of data frame (Aleshia Tomkiewicz) - Note a Series data type output.
+data.iloc[1] # second row of data frame (Evan Zigomalas)
+data.iloc[-1] # last row of data frame (Mi Richan)</p>
+<h1 id="columns">Columns:<a class="headerlink" href="#columns" title="Permanent link">&para;</a></h1>
+<p>data.iloc[:,0] # first column of data frame (first_name)
+data.iloc[:,1] # second column of data frame (last_name)
+data.iloc[:,-1] # last column of data frame (id)</p>
+<h1 id="multiple-row-and-column-selections-using-iloc-and-dataframe">Multiple row and column selections using iloc and DataFrame<a class="headerlink" href="#multiple-row-and-column-selections-using-iloc-and-dataframe" title="Permanent link">&para;</a></h1>
+<p>data.iloc[0:5] # first five rows of dataframe
+data.iloc[:, 0:2] # first two columns of data frame with all rows
+data.iloc[[0,3,6,24], [0,5,6]] # 1st, 4th, 7th, 25th row + 1st 6th 7th columns.
+data.iloc[0:5, 5:8] # first 5 rows and 5th, 6th, 7th columns of data frame (county -&gt; phone1).</p>
+<p>pandas.unique
+pandas.drop</p>
+<p>read into one dataframe
+df_allraw =  pd.concat(pd.read_excel("cpt.xls", sheet_name=None), ignore_index=True)</p>
+<p>read in as dictionary
+allraw = pd.read_excel("cpt.xls", sheet_name=None)</p>
+<p>import pandas as pd
+all_dfs = pd.read_excel(workbook_url, sheet_name=None)
+all_dfs.keys()
+all_dfs['Sheet1'].head()</p>
+<p>list(newdict.keys()).</p>
+<h1 id="pandoc_1">Pandoc<a class="headerlink" href="#pandoc_1" title="Permanent link">&para;</a></h1>
+<p>Convert document formats</p>
+<h2 id="convert_2">Convert<a class="headerlink" href="#convert_2" title="Permanent link">&para;</a></h2>
+<p>readme.md to readme.rst.</p>
+<pre><code>pandoc readme.md --from markdown --to rst -s -o readme.rst
+</code></pre>
+<p>convert multiple rst files to markdown (windows)</p>
+<pre><code>for %F in (*.rst) do pandoc %F --from rst --to markdown -s -o %F.md
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../basic/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Basic
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            2020, songzhenhe
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
